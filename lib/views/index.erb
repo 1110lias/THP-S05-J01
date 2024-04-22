@@ -4,7 +4,14 @@
   </head>
   <body>
     <h1>Mon super site de gossip, depuis le dossier views !</h1>
-    <p> Pour l'instant il n'y a rien ici.</p>
-    <a href="/gossips/new/">lien vers add a gossip</a>
+    <a href="/gossips/new/">Create Gossip</a>
+
+    <h2>Voici la liste des gossips</h2>
+    <% gossips.each do |gossip| %>
+      <p>
+        <%= gossip.author %><br/>
+        <%= gossip.content %>
+      </p>
+    <% end %>
   </body>
 </html>
