@@ -1,10 +1,18 @@
+<!DOCTYPE html>
 <html>
-  <body>
-    <p>PAGE POTIN</p>
-    <p>Voici la page du potin n° <%= @gossip %></p> 
-    <p>Son auteur : <%= @gossip.author %></p>
-    <p>Son message : <%= @gossip.content %></p>
+<head>
+  <title>Gossip Details</title>
+</head>
+<body>
+  <h1>Gossip Details</h1>
+  
+  <% if @gossip %>
+    <p><strong>ID:</strong> <%= @gossip[0] %></p>
+    <p><strong>Author:</strong> <%= @gossip[1] %></p>
+    <p><strong>Content:</strong> <%= @gossip[2] %></p>
+  <% else %>
+    <p>Potin non trouvé</p>
+  <% end %>
 
-    <a href="/">Back to index</a>
-  </body>
+</body>
 </html>

@@ -15,4 +15,13 @@ class ApplicationController < Sinatra::Base
     redirect '/'
   end
 
+  get '/gossips/:id' do
+    @gossip = Gossip.find(params[:id])
+    if @gossip
+      erb :show
+    else
+      "Ce potin n'existe pas!"
+    end
+  end
+
 end
